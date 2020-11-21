@@ -18,6 +18,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mainToolbar"
             app:title="Make a Hot Chocolate!"
             app:menu="@menu/main_menu"
             android:layout_width="match_parent"

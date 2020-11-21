@@ -14,12 +14,15 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import com.gahee.hotchoco.databinding.ActivityMainBinding
 import com.gahee.hotchoco.model.MarshMallow
 import com.gahee.hotchoco.room.MarshViewModel
 import com.gahee.hotchoco.room.MarshViewModelFactory
 import com.gahee.hotchoco.room.MyApplication
+import com.gahee.hotchoco.util.Constants.Companion.APP_PREF
+import com.gahee.hotchoco.util.Constants.Companion.IS_FIRST_OPEN
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
@@ -77,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         marshViewModel.allMarshMallows.observe(this, {
-            val prefs = getSharedPreferences("appPref", MODE_PRIVATE)
-            val isFirstOpen = prefs.getBoolean("isFirstOpen", true)
+            val prefs = getSharedPreferences(APP_PREF, MODE_PRIVATE)
+            val isFirstOpen = prefs.getBoolean(IS_FIRST_OPEN, true)
 
             val remainder = (it.size % 7)
             if (remainder != 0) {
@@ -86,11 +89,11 @@ class MainActivity : AppCompatActivity() {
                     for (x in 0 until remainder){
                         marshImageList[x].visibility = View.VISIBLE
                     }
-                    prefs.edit().putBoolean("isFirstOpen", false)
+                    prefs.edit().putBoolean(IS_FIRST_OPEN, false)
                 }
                 marshImageList[remainder - 1].visibility = View.VISIBLE
                 dropAndRotate2(marshImageList[remainder - 1])
-            } else {
+            } else if(it.isNotEmpty() && remainder == 0){
                 val mySnackbar = Snackbar.make(
                     binding.mainContainer,
                     "\uD83E\uDD0E Hot Chocolate is ready! ❤", Snackbar.LENGTH_LONG
@@ -104,18 +107,22 @@ class MainActivity : AppCompatActivity() {
                 mySnackbar.show()
             }
         })
+
+        binding.mainToolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.mypage -> {
+                    val intent = Intent(this@MainActivity, MyPageActivity::class.java)
+                    startActivity(intent)
+                    return@setOnMenuItemClickListener true
+                }
+                else -> return@setOnMenuItemClickListener false
+            }
+        }
     }
     //end of onCreate
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.mypage){
-            startActivity(Intent(this@MainActivity, MyPageActivity::class.java))
-        }
         return true
     }
 

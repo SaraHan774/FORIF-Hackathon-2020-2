@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gahee.hotchoco.util.Constants.Companion.USER_NAME_KEY
 import com.gahee.hotchoco.databinding.ActivityLoginBinding
+import com.gahee.hotchoco.util.Constants.Companion.APP_PREF
+import com.gahee.hotchoco.util.Constants.Companion.IS_FIRST_OPEN
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -36,10 +38,10 @@ class LoginActivity : AppCompatActivity() {
             this, R.layout.activity_login
         )
 
-        val prefs = getSharedPreferences("appPref", MODE_PRIVATE)
+        val prefs = getSharedPreferences(APP_PREF, MODE_PRIVATE)
         val editor = prefs.edit()
         editor.putBoolean(
-            "isFirstOpen", true
+            IS_FIRST_OPEN, true
         )
         editor.apply()
 
