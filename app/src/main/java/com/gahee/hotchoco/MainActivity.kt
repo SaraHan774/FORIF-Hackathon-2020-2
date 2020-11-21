@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                     prefs.edit().putBoolean(IS_FIRST_OPEN, false)
                 }
                 marshImageList[remainder - 1].visibility = View.VISIBLE
-                dropAndRotate2(marshImageList[remainder - 1])
+                dropMarshMallow(marshImageList[remainder - 1])
             } else if(it.isNotEmpty() && remainder == 0){
                 val mySnackbar = Snackbar.make(
                     binding.mainContainer,
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private fun dropAndRotate2(view : ImageView){
+    private fun dropMarshMallow(view : ImageView){
         val kf0 = Keyframe.ofFloat(0f, -400f)
         val kf1 = Keyframe.ofFloat(.3f, -200f)
         val kf3 = Keyframe.ofFloat(.6f, -100f)
