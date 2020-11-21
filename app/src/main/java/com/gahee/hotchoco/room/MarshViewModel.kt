@@ -1,7 +1,7 @@
 package com.gahee.hotchoco.room
 
 import androidx.lifecycle.*
-import com.gahee.hotchoco.MarshMallow
+import com.gahee.hotchoco.model.MarshMallow
 import kotlinx.coroutines.launch
 
 class MarshViewModel(private val repository: MarshRepository) : ViewModel() {

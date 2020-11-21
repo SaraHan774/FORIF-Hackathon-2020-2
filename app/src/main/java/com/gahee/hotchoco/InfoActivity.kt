@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.gahee.hotchoco.Constants.Companion.USER_NAME_KEY
+import com.gahee.hotchoco.util.Constants.Companion.USER_NAME_KEY
 import com.gahee.hotchoco.databinding.ActivityInfoBinding
 
 class InfoActivity : AppCompatActivity() {

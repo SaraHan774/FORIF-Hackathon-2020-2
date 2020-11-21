@@ -1,7 +1,7 @@
 package com.gahee.hotchoco.room
 
 import androidx.annotation.WorkerThread
-import com.gahee.hotchoco.MarshMallow
+import com.gahee.hotchoco.model.MarshMallow
 import kotlinx.coroutines.flow.Flow
 
 

@@ -5,7 +5,6 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +16,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gahee.hotchoco.databinding.ActivityMainBinding
+import com.gahee.hotchoco.model.MarshMallow
 import com.gahee.hotchoco.room.MarshViewModel
 import com.gahee.hotchoco.room.MarshViewModelFactory
 import com.gahee.hotchoco.room.MyApplication
@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
     lateinit var marshmallow : String
 
-    private val mainViewModel : MainViewModel by viewModels()
     private val marshViewModel: MarshViewModel by viewModels {
         MarshViewModelFactory((application as MyApplication).repository)
     }
@@ -69,7 +68,8 @@ class MainActivity : AppCompatActivity() {
                         MarshMallow(
                         date = Calendar.getInstance().timeInMillis.toString(),
                         content = marshmallow
-                    ))
+                    )
+                    )
                 }
                 bottomSheetDialog.dismiss()
             }

@@ -1,4 +1,4 @@
-package com.gahee.hotchoco
+package com.gahee.hotchoco.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

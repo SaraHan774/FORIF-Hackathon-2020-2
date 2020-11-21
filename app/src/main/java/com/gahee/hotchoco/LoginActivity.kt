@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.gahee.hotchoco.Constants.Companion.USER_NAME_KEY
+import com.gahee.hotchoco.util.Constants.Companion.USER_NAME_KEY
 import com.gahee.hotchoco.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

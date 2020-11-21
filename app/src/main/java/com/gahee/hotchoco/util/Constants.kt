@@ -1,4 +1,4 @@
-package com.gahee.hotchoco
+package com.gahee.hotchoco.util
 
 class Constants {
 
