@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "51595470683",
+    "firebase_url": "https://hot-chocolate-forif.firebaseio.com",
+    "project_id": "hot-chocolate-forif",
+    "storage_bucket": "hot-chocolate-forif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51595470683:android:4311826f00ad88bdaa9c7e",
+        "android_client_info": {
+          "package_name": "com.gahee.hotchoco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51595470683-d3jp5hro8mbfa954cvk54jtjkcvmtvoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gahee.hotchoco",
+            "certificate_hash": "16035de2b21ec4ca45a2fac989dfba57ca0ab68e"
+          }
+        },
+        {
+          "client_id": "51595470683-q245vbr2991uvcbh66e5tsbcns6q0h2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1MsJ4xfnUY91oiUwFdSNT1ENjF7thXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51595470683-q245vbr2991uvcbh66e5tsbcns6q0h2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
